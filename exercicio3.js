@@ -3,11 +3,12 @@
 
 const arr = [1,2,'',0, undefined]
 
-const removeUnnecessaryValues = (arr) =>{
-let filteredArray = arr.filter((item)=>{
-return typeof(item)=="number" && item >0;
-})
-return filteredArray;
+const removeFalsy = array =>{
+  return  array.filter((item)=>{
+        if(Boolean(item)){
+            return item;
+        }
+    })
 }
 
-console.log(removeUnnecessaryValues(arr))
+console.log(removeFalsy(arr))
